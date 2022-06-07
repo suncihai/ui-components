@@ -1,0 +1,42 @@
+.container {
+  composes: flex overflow-auto scrollbar-hidden flex-col bg-primary-background text-primary-text rounded-lg max-h-full tabletSm-down|h-screen tabletSm-down|rounded-t-none from global;
+}
+
+.container-default {
+}
+
+.container-compact {
+  composes: relative from global;
+}
+.mobile {
+  composes: w-full h-full from global;
+}
+
+.title {
+  composes: flex items-center justify-between p-3 capitalize font-semibold from global;
+  height: 48px;
+}
+
+.title-default {
+  composes: border-b-2 border-secondary-border from global;
+  & .titleText {
+    font-size: 20px;
+  }
+}
+
+.title-compact {
+  composes: top-0 right-4 w-4 h-4 z-10 absolute from global;
+  color: var(--grey-10);
+}
+
+.title-mobile-nav {
+  composes: bg-mobile-nav-header-background from global;
+}
+
+.icon {
+  composes: text-xs tabletSm-down|mt-1.5 from global;
+}
+.icon-default {
+  composes: p-0 border-none outline-none from global;
+  background: none;
+}

@@ -1,0 +1,136 @@
+.button {
+  composes: flex items-center justify-center border border-transparent rounded-full text-center font-semibold text-sm leading-4 cursor-pointer w-100 from global;
+  outline: 0;
+  white-space: nowrap;
+  --icon-size: 32px;
+  --icon-padding: 7px;
+  --sm-icon-size: 24px;
+
+  &:disabled,
+  &[disabled] {
+    cursor: default;
+  }
+
+  &.xs {
+    padding: 7px 14px;
+  }
+
+  &.sm {
+    padding: 7px 24px;
+  }
+
+  &.md {
+    padding: 9px 27px;
+    --icon-size: 36px;
+    --icon-padding: 9px;
+  }
+
+  &.lg {
+    padding: 11px 30px;
+    --icon-size: 40px;
+    --icon-padding: 11px;
+  }
+  &.xl {
+    padding: 11px 30px;
+    --icon-size: 50px;
+    --icon-padding: 11px;
+  }
+
+  &.icon {
+    padding: var(--icon-padding);
+    height: var(--icon-size);
+    width: var(--icon-size);
+  }
+
+  &.smIcon {
+    padding: var(--icon-padding);
+    height: var(--sm-icon-size);
+    width: var(--sm-icon-size);
+  }
+
+  &.rounded {
+    padding: 8px;
+  }
+}
+
+.primary {
+  composes: bg-primary-button-background text-primary-button-text hover|bg-primary-button-hover hover|text-primary-button-hover-text from global;
+
+  &.disabled {
+    color: var(--primary-button-disabled-text) !important;
+    background-color: var(--primary-button-disabled) !important;
+  }
+}
+
+.secondary {
+  composes: bg-secondary-button-background text-secondary-button-text hover|bg-secondary-button-hover hover|text-secondary-button-hover-text border border-secondary-button-border from global;
+
+  &.disabled {
+    color: var(--secondary-button-disabled-text) !important;
+    background-color: var(--secondary-button-disabled) !important;
+  }
+}
+
+.light {
+  composes: bg-inherit text-secondary-button-disabled-text hover|bg-secondary-button-hover hover|text-secondary-button-hover-text from global;
+}
+
+.pill {
+  composes: primary;
+  height: 35px;
+  font-size: 13px;
+}
+
+.plus {
+  composes: text-white hover|text-legacy-blue-1 from global;
+  background-repeat: repeat-y;
+  background-image: linear-gradient(
+    to right,
+    var(--legacy-blue-3) 0,
+    var(--legacy-blue-3) 33%,
+    var(--legacy-gradient-blue-2) 66%,
+    var(--legacy-blue) 100%
+  );
+  transition-property: background-position, color, background-color, fill;
+  background-position: 99% 0%;
+  background-size: 300% 100%;
+
+  &:hover {
+    background-position: 1% 0%;
+  }
+
+  &.disabled {
+    background-position: 1% 0% !important;
+    color: var(--legacy-white-base) !important;
+  }
+}
+
+.tradeapp {
+  composes: text-white hover|bg-legacy-dark-green-text from global;
+  background-color: var(--legacy-light-green-text);
+
+  &.disabled {
+    background-color: var(--legacy-light-green-bg) !important;
+  }
+}
+
+.databox {
+  composes: bg-watch-button-background text-primary-text hover|bg-watch-button-hover hover|border-light-border from global;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  border-color: transparent;
+  width: 25px !important;
+  height: 25px !important;
+
+  &.disabled {
+    color: var(--legacy-blue-3) !important;
+    background-color: var(--legacy-white-base) !important;
+  }
+}
+
+.dark {
+  composes: text-black bg-white hover|text-white hover|bg-black hover|border-transparent border border-legacy-gray-2 from global;
+}
+
+.underline {
+  composes: text-primary-button-text underline font-medium from global;
+}

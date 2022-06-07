@@ -1,0 +1,472 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+:root {
+  --black: #000000;
+  --black-2: #101010;
+  --charcoal-darker-2: #252527;
+  --charcoal-darker: #1c1c1e;
+
+  --grey-11: #5b5c61;
+  --grey-10: #7b7b7b;
+  --grey-9: #9c9ea5;
+  --grey-8: #afafaf;
+  --grey-7: #cecfd5;
+  --grey-6: #d4d6da;
+  --grey-5: #dee0e3;
+  --grey-4: #e8e9eb;
+  --grey-3: #f0f3f6;
+  --grey-2: #edf0f4;
+  --grey-1: #f6f6f6;
+  --transparent: transparent;
+  --white: #ffffff;
+  --white-2: #f8f8fb;
+  --social-facebook: #1978f2;
+  --social-twitter: #1da1f2;
+  --blue: #008fff;
+  --blue-2: #0167b7;
+  --blue-3: #04253e;
+  --blue-4: #084473;
+  --blue-5: #1b66e7;
+  --blue-6: #6ad3fa;
+
+  --social-twitter: #009df6;
+  --social-linkedin: #2867b2;
+
+  --dark-red: #cf0c1c;
+
+  --blue-dark: #1b66e7;
+  --blue-dark-transparent: rgba(24, 108, 174, 0.5);
+
+  /* iOS light greys */
+  --light-grey: #8e8e93;
+  --light-grey-2: #aeaeb2;
+  --light-grey-3: #c7c7cc;
+  --light-grey-4: #d1d1d6;
+  --light-grey-5: #e5e5ea;
+  --light-grey-6: #f2f2f7;
+
+  --light-grey-5-rgba-40: rgba(229, 229, 234, 0.4);
+  --light-grey-5-rgba-75: rgba(229, 229, 234, 0.75);
+  --light-grey-6-rgba-40: rgba(242, 242, 247, 0.4);
+
+  /* Custom light greys */
+  --light-grey-7: #d1d1d6;
+  --light-grey-8: #aeaeaf;
+  --light-grey-10: #8e8e93;
+  --light-grey-11: #c7c7cc;
+  --dark-grey-2: #636366;
+
+  /* iOS dark greys */
+  --dark-grey: #8e8e93;
+  --dark-grey-2: #636366;
+  --dark-grey-3: #48484a;
+  --dark-grey-4: #3a3a3c;
+  --dark-grey-5: #2c2c2e;
+  --dark-grey-6: #020202;
+
+  /* imported from web-shared */
+  --legacy-base-text-color: rgba(39, 39, 39, 1);
+  --legacy-black: rgba(0, 0, 0, 1);
+  --legacy-blue-bright: rgba(0, 186, 255, 1);
+  --legacy-blue-hover: rgb(0, 163, 224);
+  --legacy-blue: rgba(51, 67, 94, 1);
+  --legacy-border-color: rgba(242, 243, 245, 1);
+  --legacy-dark-blue: rgba(43, 55, 76, 1);
+  --legacy-facebook: rgb(58, 91, 153);
+  --legacy-gray-blue: rgba(189, 190, 194, 1);
+  --legacy-gray-dark: color-mod(black lightness(+25%));
+  --legacy-gray-darker: color-mod(black lightness(+13.5%));
+  --legacy-gray-mid: rgba(146, 146, 146, 1);
+  --legacy-gray-light: rgba(229, 229, 229, 1);
+  --legacy-gray: rgba(242, 243, 245, 1);
+  --legacy-green: rgba(158, 212, 116, 1);
+  --legacy-green-hover: rgba(129, 189, 87, 1);
+  --legacy-hover-color: rgba(247, 248, 250, 1);
+  --legacy-linkedin: rgb(39, 118, 183);
+  --legacy-red: rgba(212, 59, 59, 1);
+  --legacy-red-on-blue: rgba(255, 70, 70, 1);
+  --legacy-red-hover: rgba(196, 55, 55, 1);
+  --legacy-register: rgb(68, 86, 110);
+  --legacy-robinhood-green: rgba(33, 206, 153, 1);
+  --legacy-twitter: #1da1f2;
+  --legacy-white-base: rgba(255, 255, 255, 1);
+  --legacy-yellow: rgba(245, 198, 33, 1);
+
+  /* imported from zeplin-rooms styleguide */
+  --legacy-pale-olive-green: #9ed474;
+  --legacy-greyish-brown: #404040;
+  --legacy-dark-grey-blue: #33435e;
+  --legacy-dark-grey-blue-two: #2b374c;
+  --legacy-warm-grey: #929292;
+  --legacy-mask-grey: #787878;
+  --legacy-pale-red: #d43b3b;
+  --legacy-black: #272727;
+  --legacy-bluey-grey: #a1a6b9;
+  --legacy-blueberry: #4d438b;
+  --legacy-bright-sky-blue: #00baff;
+  --legacy-bright-sky-blue-light: #ccf1ff;
+  --legacy-blueberry: #4d438b;
+  --legacy-duck-egg-blue: #b3e3f5;
+  --legacy-silver: #bdbec2;
+  --legacy-silver-two: #dedee0;
+  --legacy-coral: #ff4646;
+  --legacy-cloudy-blue: #b7bcd2;
+  --legacy-light-royal-blue: #3a24ff;
+  --legacy-gradient-blue-2: #69c4ff;
+  --legacy-golden-yellow: #f5c621;
+  --legacy-dark-grey-blue-three: #32425f;
+  --legacy-dark-grey-blue-80: rgba(43, 54, 76, 0.8);
+  --legacy-dark-grey-blue-four: #2b374d;
+  --legacy-dark-grey-blue-five: #3a3361;
+  --legacy-pale-red-two: #d63936;
+  --legacy-dark-sky-blue: #37abed;
+  --legacy-dark-indigo: #211570;
+  --legacy-dark-grey-blue-two-80: rgba(43, 55, 76, 0.8);
+  --legacy-white-two: #d6d6d6;
+  --legacy-white-three: #e8e8e8;
+  --legacy-light-grey-green: #b4dfc6;
+  --legacy-midnight-blue: #080039;
+  --legacy-pale-red-three: #e65344;
+  --legacy-premium-grey: #9294b9;
+  --legacy-greenish-teal: #2ecc71;
+  --legacy-warm-grey-two: #999999;
+  --legacy-beige: #e5c1be;
+  --legacy-watermelon: #ff4072;
+  --legacy-white-four: #f8f8f8;
+  --legacy-white-five: #f9f9f9;
+  --legacy-white-six: #d8d8d8;
+
+  /* Redesign colors */
+
+  --legacy-brand-blue-1: #2b374c;
+  --legacy-brand-blue-2: #33435e;
+
+  --legacy-premium-rooms-primary: #1d1a6c;
+  --legacy-premium-rooms-secondary: #b8bcd0;
+
+  --legacy-trade-app-bg: #050510;
+
+  --legacy-blue: #218dff;
+  --legacy-blue-1: #1c73e4;
+  --legacy-blue-2: #69c4ff;
+  --legacy-blue-3: #dbeffc;
+
+  --legacy-dark-blue-1: #202733;
+
+  --legacy-red-1: #d13656;
+  --legacy-red-2: #e88095;
+  --legacy-red-3: #fbeaee;
+
+  --legacy-green-1: #2a836f;
+  --legacy-green-2: #44bd97;
+  --legacy-green-3: #d3f4ea;
+  --legacy-green-4: #62d7b0;
+  --legacy-green-5: #59b67a;
+
+  --legacy-off-black: #101010;
+  --legacy-gray-1: #767676;
+  --legacy-gray-2: #d7d9dc;
+  --legacy-gray-3: #f6f6f6;
+  --legacy-gray-4: #f9fbfe;
+  --legacy-gray-5: #f6f6fa;
+
+  /* theme-specific colors */
+  --legacy-light-bg: #fff;
+  --legacy-dark-bg: #050510;
+  --legacy-light-stream-bg: #fff;
+  --legacy-dark-stream-bg: #0b0b14;
+  --legacy-light-raised-card: #fff;
+  --legacy-dark-raised-card: #11131d;
+  --legacy-light-highlight: #f6f6f6;
+  --legacy-dark-highlight: #252d3f;
+  --legacy-light-primary-text: #101010;
+  --legacy-dark-primary-text: #d8e1e7;
+  --legacy-light-secondary-text: #767676;
+  --legacy-dark-secondary-text: #8b96a6;
+  --legacy-light-strong-border: #767676;
+  --legacy-dark-strong-border: #8b96a6;
+
+  --legacy-light-blue-text: #218dff;
+  --legacy-dark-blue-text: rgb(33, 141, 255);
+  --legacy-light-blue-bg: #e8f3ff;
+  --legacy-dark-blue-bg: rgb(33, 141, 255, 0.1);
+  --legacy-light-green-text: #0aba74;
+  --legacy-dark-green-text: rgb(19, 206, 111);
+  --legacy-light-green-bg: #e6f8f1;
+  --legacy-dark-green-bg: rgb(19, 206, 111, 0.1);
+  --legacy-light-red-text: #ff3e3e;
+  --legacy-dark-red-text: rgb(255, 62, 62);
+  --legacy-light-red-bg: #ffecec;
+  --legacy-dark-red-bg: rgb(255, 62, 62, 0.1);
+
+  /* default theme from here */
+  --blue-ada: #1b66e7;
+  --green: #128760;
+  --red: #dd331d;
+  --green-chart: #19b682;
+  --red-chart: #fe433d;
+  --charcoal: #2c2c2e;
+
+  --primary-background: #ffffff;
+  --secondary-background: #f2f2f7;
+  --tertiary-background: #f8f8fb;
+  --watchlist-background: #f2f2f7;
+  --chart-float-background: #1c1c1e;
+  --dark-background: #000000;
+  --sitenav-login-background: #ffffff;
+  --tag-background: #f2f2f7;
+  --top-banner-background: #f2f2f7;
+  --sidebar-background: rgba(242, 242, 247, 0.5);
+  --nav-sidebar-mobile-background: rgba(242, 242, 247, 0.5);
+  --nav-sidebar-tablet-background: rgba(242, 242, 247, 0.5);
+  --mobile-nav-header-background: #ffffff;
+
+  --primary-text: #000000;
+  --secondary-text: #101010;
+  --tertiary-text: #636366;
+  --light-text: #ffffff;
+  --sitenav-text: #c7c7cc;
+  --tag-text: #8e8e93;
+  --icon-text: #101010;
+  --stream-text: #636366;
+
+  --primary-hairline: #f2f2f7;
+  --secondary-hairline: #f8f8fb;
+
+  --primary-border: #e5e5ea;
+  --secondary-border: #f2f2f7;
+  --tertiary-border: #e5e5ea;
+  --stream-border: #e8e9eb;
+  --sitenav-border: rgba(229, 229, 234, 0.75);
+  --sitenav-tablet-border: rgba(229, 229, 234, 0.75);
+  --light-border: #ffffff;
+
+  --primary-hover: #f9fbfe;
+  --primary-selected: #e5e5ea;
+  --secondary-selected: #f6f6f6;
+  --select-focused: #86b7fe;
+
+  --premium-room-fill: #ffffff;
+  --chart-wick: #000000;
+
+  --primary-button-background: #1b66e7;
+  --primary-button-text: #ffffff;
+  --primary-button-hover: #008fff;
+  --primary-button-hover-text: #ffffff;
+  --primary-button-disabled: #d1d1d6;
+  --primary-button-disabled-text: #ffffff;
+  --secondary-button-background: #ffffff;
+  --secondary-button-text: #000000;
+  --secondary-button-hover: #f8f8fb;
+  --secondary-button-hover-text: #000000;
+  --secondary-button-disabled: #ffffff;
+  --secondary-button-disabled-text: #aeaeb2;
+  --secondary-button-border: #e5e5ea;
+  --watch-button-background: #ffffff;
+  --watch-button-hover: #f6f6fa;
+  --databox-background-hover: hsla(240, 24%, 96%, 0.5);
+
+  --stocktwits-toastify-color-info: #000000;
+  --stocktwits-toastify-color-success: #000000;
+  --stocktwits-toastify-color-warning: #000000;
+  --stocktwits-toastify-color-error: #dd331d;
+
+  --overlap-background: #ffffff;
+  --sidebar: 0;
+  @media (min-width: 1133px) and (max-width: 1193px) {
+    --sidebar: 190px;
+  }
+  @media (min-width: 1194px) and (max-width: 1365px) {
+    --sidebar: 262px;
+  }
+  @media (min-width: 1366px) {
+    --sidebar: 300px;
+  }
+}
+
+/* define all dark theme colors here, so no need to write [data-theme='dark'] in other css*/
+[data-theme='dark'] {
+  --blue-ada: #008fff;
+  --green: #19b682;
+  --red: #fe433d;
+  --charcoal: #1c1c1e;
+
+  --primary-background: #1c1c1e;
+  --secondary-background: #000000;
+  --tertiary-background: #0e0e0f;
+  --watchlist-background: #000000;
+  --chart-float-background: #ffffff;
+  --dark-background: #ffffff;
+  --sitenav-login-background: #3a3a3c;
+  --tag-background: #3a3a3c;
+  --top-banner-background: #1c1c1e;
+  --emphasized-tab-background: #0e0e0f;
+  --sidebar-background: #000000;
+  --nav-sidebar-mobile-background: #0b0b0c;
+  --nav-sidebar-tablet-background: #1c1c1e;
+  --mobile-nav-header-background: #000000;
+  --legacy-light-blue-bg: rgb(33, 141, 255, 0.1);
+
+  --primary-text: #ffffff;
+  --secondary-text: #ffffff;
+  --tertiary-text: #aeaeb2;
+  --light-text: #000000;
+  --sitenav-text: #8e8e93;
+  --tag-text: #aeaeb2;
+  --icon-text: #8e8e93;
+  --stream-text: #8e8e93;
+
+  --primary-hairline: #000000;
+  --secondary-hairline: #0e0e0f;
+
+  --primary-border: #3a3a3c;
+  --secondary-border: #000000;
+  --tertiary-border: #000000;
+  --stream-border: #000000;
+  --sitenav-border: #1c1c1e;
+  --sitenav-tablet-border: #2c2c2e;
+  --light-border: #000000;
+  --divider-border: #1c1c1e;
+
+  --primary-hover: #000000;
+  --primary-selected: #0e0e0f;
+  --secondary-selected: #252d3f;
+  --select-focused: #000000;
+
+  --premium-room-fill: #908ab8;
+  --chart-wick: #8e8e93;
+
+  --primary-button-background: #1b66e7;
+  --primary-button-text: #ffffff;
+  --primary-button-hover: #008fff;
+  --primary-button-hover-text: #ffffff;
+  --primary-button-disabled: #48484a;
+  --primary-button-disabled-text: #000000;
+  --secondary-button-background: #1c1c1e;
+  --secondary-button-text: #ffffff;
+  --secondary-button-hover: #0e0e0f;
+  --secondary-button-hover-text: #ffffff;
+  --secondary-button-disabled: #1c1c1e;
+  --secondary-button-disabled-text: #636366;
+  --secondary-button-border: #3a3a3c;
+  --watch-button-background: #2c2c2e;
+  --watch-button-hover: #000000;
+  --databox-background-hover: hsla(0, 0%, 0%, 1);
+
+  --stocktwits-toastify-color-info: #ffffff;
+  --stocktwits-toastify-color-success: #ffffff;
+  --stocktwits-toastify-color-warning: #ffffff;
+  --stocktwits-toastify-color-error: #dd331d;
+
+  --overlap-background: #2c2c2e;
+}
+
+[data-theme='light'] {
+  --blue-ada: #1b66e7;
+  --green: #128760;
+  --red: #dd331d;
+  --charcoal: #2c2c2e;
+
+  --primary-background: #ffffff;
+  --secondary-background: #f2f2f7;
+  --tertiary-background: #f8f8fb;
+  --watchlist-background: #f2f2f7;
+  --chart-float-background: #1c1c1e;
+  --dark-background: #000000;
+  --sitenav-login-background: #ffffff;
+  --tag-background: #f2f2f7;
+  --top-banner-background: #f2f2f7;
+  --emphasized-tab-background: #f8f8f8;
+  --sidebar-background: rgba(242, 242, 247, 0.5);
+  --nav-sidebar-mobile-background: rgba(242, 242, 247, 0.5);
+  --nav-sidebar-tablet-background: rgba(242, 242, 247, 0.5);
+  --mobile-nav-header-background: #ffffff;
+  --legacy-light-blue-bg: #e8f3ff;
+
+  --primary-text: #000000;
+  --secondary-text: #101010;
+  --tertiary-text: #636366;
+  --light-text: #ffffff;
+  --sitenav-text: #c7c7cc;
+  --tag-text: #8e8e93;
+  --icon-text: #101010;
+  --stream-text: #636366;
+
+  --primary-hairline: #f2f2f7;
+  --secondary-hairline: #f8f8fb;
+
+  --primary-border: #e5e5ea;
+  --secondary-border: #f2f2f7;
+  --tertiary-border: #e5e5ea;
+  --stream-border: #e8e9eb;
+  --sitenav-border: rgba(229, 229, 234, 0.75);
+  --sitenav-tablet-border: rgba(229, 229, 234, 0.75);
+  --light-border: #ffffff;
+  --divider-border: #ffffff;
+
+  --primary-hover: #f9fbfe;
+  --primary-selected: #e5e5ea;
+  --secondary-selected: #f6f6f6;
+  --select-focused: #86b7fe;
+
+  --premium-room-fill: #ffffff;
+  --chart-wick: #000000;
+
+  --primary-button-background: #1b66e7;
+  --primary-button-text: #ffffff;
+  --primary-button-hover: #008fff;
+  --primary-button-hover-text: #ffffff;
+  --primary-button-disabled: #d1d1d6;
+  --primary-button-disabled-text: #ffffff;
+  --secondary-button-background: #ffffff;
+  --secondary-button-text: #000000;
+  --secondary-button-hover: #f8f8fb;
+  --secondary-button-hover-text: #000000;
+  --secondary-button-disabled: #ffffff;
+  --secondary-button-disabled-text: #aeaeb2;
+  --secondary-button-border: #e5e5ea;
+  --watch-button-background: #ffffff;
+  --watch-button-hover: #f6f6fa;
+
+  --stocktwits-toastify-color-info: #000000;
+  --stocktwits-toastify-color-success: #000000;
+  --stocktwits-toastify-color-warning: #000000;
+  --stocktwits-toastify-color-error: #dd331d;
+
+  --overlap-background: #ffffff;
+}
+
+[data-theme='blue'] {
+  --primary-button-background: #ffffff;
+  --primary-button-text: #1b66e7;
+  --primary-button-hover: #ffffff;
+  --primary-button-hover-text: #000000;
+  --primary-button-disabled: #1757c5;
+  --primary-button-disabled-text: #008fff;
+  --secondary-button-background: #1b66e7;
+  --secondary-button-text: #ffffff;
+  --secondary-button-hover: #1757c5;
+  --secondary-button-hover-text: #ffffff;
+  --secondary-button-disabled: #1b66e7;
+  --secondary-button-disabled-text: #008fff;
+  --secondary-button-border: #008fff;
+}
+
+/* root elements */
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
+body {
+  font-family: Source Sans Pro, Arial, Helvetica Neue, Helvetica, sans-serif;
+  visibility: visible !important;
+}
