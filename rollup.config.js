@@ -7,8 +7,15 @@ import postcss from 'rollup-plugin-postcss';
 import postcssImport from 'postcss-import';
 import postcssNested from 'postcss-nested';
 import autoprefixer from 'autoprefixer';
+import { terser } from 'rollup-plugin-terser';
 
 const packageJson = require('./package.json');
+
+const globals = {
+  react: 'React',
+  'react-dom': 'ReactDOM',
+  'prop-types': 'PropTypes',
+};
 
 export default {
   input: 'src/index.ts', // entry point for roll up to our library
@@ -17,27 +24,36 @@ export default {
     {
       file: packageJson.main,
       format: 'cjs',
+      globals,
       sourcemap: true,
     },
     // esm module is 'tree shakeable'
     {
       file: packageJson.module,
       format: 'esm',
+      globals,
       sourcemap: true,
     },
   ],
   plugins: [
-    peerDepsExternal(),
+    peerDepsExternal({ includeDependencies: false }),
     resolve(),
     postcss({
       extract: false,
       plugins: [postcssImport(), postcssNested(), autoprefixer()],
       extensions: ['.css'],
     }),
-    commonjs(),
+    commonjs({
+      include: ['node_modules/**', 'src/breakpoints.js'],
+      namedExports: {
+        'src/breakpoints.js': ['breakpoints'],
+        'node_modules/react-responsive/src/index.js': ['useMediaQuery'],
+      },
+    }),
     tsConfigPaths(),
     typescript({
       tsconfig: './tsconfig.json',
     }),
+    //terser(),
   ],
 };

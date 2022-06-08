@@ -7,7 +7,6 @@
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
-  "style": "lib/index.css",
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -15,8 +14,8 @@
     "start": "yarn rollup -c -w"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
@@ -28,6 +27,7 @@
     "@storybook/addon-postcss": "^2.0.0",
     "@storybook/react": "^6.3.12",
     "@types/react": "^17.0.34",
+    "@types/react-responsive": "^8.0.5",
     "path": "^0.12.7",
     "postcss": "8.4.5",
     "postcss-import": "^14.1.0",
@@ -36,17 +36,22 @@
     "postcss-preset-env": "6.7.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-responsive": "8.2.0",
     "rollup": "^2.59.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.1",
     "rollup-plugin-postcss-modules": "^2.0.2",
     "rollup-plugin-styles": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-ts-paths": "^1.0.5",
     "storybook-css-modules-preset": "^1.1.1",
     "storybook-dark-mode": "^1.1.0",
     "typescript": "^4.4.4"
   },
   "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "autoprefixer": "10.4.2",
     "classnames": "^2.3.1",
     "prettier": "^2.4.1",
