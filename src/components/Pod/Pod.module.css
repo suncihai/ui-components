@@ -1,0 +1,3 @@
+.container {
+  composes: bg-primary-background text-primary-text rounded-md shadow-1 from global;
+}

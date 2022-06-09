@@ -1,12 +1,12 @@
+import { useEffect } from 'react';
 import classNames from 'classnames';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useIsTabletSm } from '../../hooks/useMediaQueries';
 
 import s from './Card.module.css';
-import { useEffect } from 'react';
 
-type CardProps = {
+export type CardProps = {
   type?: 'default' | 'compact' | 'mobile-nav';
   title?: string | React.ReactNode;
   children?: React.ReactNode;
@@ -19,13 +19,14 @@ export default function Card(props: CardProps) {
     title,
     children,
     onRequestClose,
-    type = 'compact',
+    type = 'default',
     className = '',
   } = props;
   const mobile = useIsTabletSm();
 
   useEffect(() => {
     console.log('mobile', mobile);
+    console.log('env', process.env.NODE_ENV);
   }, [mobile]);
 
   return (
@@ -46,7 +47,7 @@ export default function Card(props: CardProps) {
             className={classNames(s.icon, s[`icon-${type}`])}
             onClick={onRequestClose}
           >
-            {/* <FontAwesomeIcon size="2x" icon={faTimes} /> */}
+            <FontAwesomeIcon size="2x" icon={faTimes} />
           </button>
         )}
       </div>

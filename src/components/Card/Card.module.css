@@ -36,6 +36,9 @@
 .icon {
   composes: text-xs tabletSm-down|mt-1.5 from global;
 }
+.icon-compact {
+  composes: hidden from global;
+}
 .icon-default {
   composes: p-0 border-none outline-none from global;
   background: none;

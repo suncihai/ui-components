@@ -1,0 +1,8 @@
+.premiumRoomButton {
+  composes: inline-flex gap-x-2 from global;
+  max-width: 204px;
+}
+
+.icon {
+  height: 13.5px;
+}

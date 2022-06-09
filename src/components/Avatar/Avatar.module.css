@@ -1,0 +1,7 @@
+.avatarContainer {
+  composes: border rounded-full bg-cover bg-no-repeat from global;
+  border-color: var(--grey-2);
+  &.default {
+    border: none;
+  }
+}

@@ -8,6 +8,7 @@ import postcssImport from 'postcss-import';
 import postcssNested from 'postcss-nested';
 import autoprefixer from 'autoprefixer';
 import { terser } from 'rollup-plugin-terser';
+import svg from 'rollup-plugin-svg';
 
 const packageJson = require('./package.json');
 
@@ -17,24 +18,36 @@ const globals = {
   'prop-types': 'PropTypes',
 };
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export default {
   input: 'src/index.ts', // entry point for roll up to our library
-  output: [
-    // how files will be outputted, we will read the outputs from package.json
-    {
-      file: packageJson.main,
-      format: 'cjs',
-      globals,
-      sourcemap: true,
-    },
-    // esm module is 'tree shakeable'
-    {
-      file: packageJson.module,
-      format: 'esm',
-      globals,
-      sourcemap: true,
-    },
-  ],
+  output: isProduction
+    ? [
+        // how files will be outputted, we will read the outputs from package.json
+        {
+          file: packageJson.main,
+          format: 'cjs',
+          globals,
+          sourcemap: true,
+        },
+        // esm module is 'tree shakeable'
+        {
+          file: packageJson.module,
+          format: 'esm',
+          globals,
+          sourcemap: true,
+        },
+      ]
+    : [
+        {
+          file: packageJson.module,
+          format: 'esm',
+          globals,
+          sourcemap: true,
+        },
+      ],
+  cache: !isProduction,
   plugins: [
     peerDepsExternal({ includeDependencies: false }),
     resolve(),
@@ -54,6 +67,7 @@ export default {
     typescript({
       tsconfig: './tsconfig.json',
     }),
+    svg(),
     //terser(),
   ],
 };

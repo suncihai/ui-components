@@ -1,3 +1,10 @@
+.Avatar-module_avatarContainer__dMpZG {
+  border-color: var(--grey-2);
+}
+  .Avatar-module_avatarContainer__dMpZG.Avatar-module_default__omRXt {
+    border: none;
+  }
+
 .Button-module_button__2ZuB7 {
   outline: 0;
   white-space: nowrap;
@@ -161,4 +168,13 @@
 
 .Card-module_icon-default__AxljA {
   background: none;
+}
+
+.Pod-module_container__S1UDS {
+}
+.PremiumRoomButton-module_premiumRoomButton__Xrj6W {
+}
+
+.PremiumRoomButton-module_icon__nFCuv {
+  height: 13.5px;
 }
