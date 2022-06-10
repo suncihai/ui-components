@@ -5,3 +5,8 @@ declare const _default: Meta<import("@storybook/react").Args>;
 export default _default;
 export declare const Primary: Story<ButtonProps>;
 export declare const Secondary: Story<ButtonProps>;
+export declare const Dark: Story<ButtonProps>;
+export declare const Light: Story<ButtonProps>;
+export declare const Pill: Story<ButtonProps>;
+export declare const Databox: Story<ButtonProps>;
+export declare const TradeApp: Story<ButtonProps>;

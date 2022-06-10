@@ -68,6 +68,6 @@ export default {
       tsconfig: './tsconfig.json',
     }),
     svg(),
-    //terser(),
+    terser(),
   ],
 };

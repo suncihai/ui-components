@@ -12,8 +12,8 @@ export default {
 const Template: Story<PodProps> = (args) => <Pod {...args} className="p-3" />;
 
 // Reuse that template for creating different stories
-export const DefaultPod = Template.bind({});
-DefaultPod.args = {
+export const Sample = Template.bind({});
+Sample.args = {
   children: (
     <div style={{ maxWidth: 300 }}>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.

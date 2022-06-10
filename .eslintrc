@@ -1,0 +1,44 @@
+{
+  "extends": ["plugin:@typescript-eslint/recommended", "prettier"],
+  "plugins": ["@typescript-eslint", "sort-keys-fix", "prettier"],
+  "rules": {
+    "camelcase": 0,
+    "comma-dangle": 0,
+    "space-before-function-paren": 0,
+    "indent": 0,
+    "@next/next/no-img-element": 0,
+    "no-use-before-define": 0,
+    "no-unused-vars": 0,
+    "@typescript-eslint/ban-ts-comment": 1,
+    "@typescript-eslint/explicit-module-boundary-types": 2,
+    "@typescript-eslint/no-inferrable-types": 0,
+    "@typescript-eslint/no-unused-vars": 2,
+    "@typescript-eslint/no-use-before-define": 1,
+    "multiline-ternary": 0,
+    "import/no-unresolved": 0,
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": 0,
+    "sort-keys-fix/sort-keys-fix": 1,
+    "import/order": 0
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx", "*.jsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": 0
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "no-undef": 0
+      }
+    }
+  ]
+}

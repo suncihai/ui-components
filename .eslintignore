@@ -1,0 +1,10 @@
+package.json
+yarn.lock
+storybook-static/
+/node_modules
+/lib
+rollup.config.js
+tailwind.config.js
+postcss.config.js
+*.d.ts
+*.stories.tsx

@@ -1,0 +1,19 @@
+.loading {
+  composes: flex justify-center items-center from global;
+  height: 50px;
+}
+
+.loadingIcon {
+  --size: 24px;
+  composes: flex justify-center items-center from global;
+  animation: spin 1s linear infinite;
+  height: var(--size);
+  transform-origin: 50%;
+  width: var(--size);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

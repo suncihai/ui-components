@@ -21,3 +21,33 @@ Secondary.args = {
   children: 'Secondary',
   style: 'secondary',
 };
+
+export const Dark = Template.bind({});
+Dark.args = {
+  children: 'Dark',
+  style: 'dark',
+};
+
+export const Light = Template.bind({});
+Light.args = {
+  children: 'Light',
+  style: 'light',
+};
+
+export const Pill = Template.bind({});
+Pill.args = {
+  children: 'Pill',
+  style: 'pill',
+};
+
+export const Databox = Template.bind({});
+Databox.args = {
+  children: 'Databox',
+  style: 'databox',
+};
+
+export const TradeApp = Template.bind({});
+TradeApp.args = {
+  children: 'Trade',
+  style: 'tradeapp',
+};

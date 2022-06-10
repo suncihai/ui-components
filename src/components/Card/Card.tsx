@@ -1,7 +1,6 @@
-import { useEffect } from 'react';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/pro-light-svg-icons';
 import { useIsTabletSm } from '../../hooks/useMediaQueries';
 
 import s from './Card.module.css';
@@ -23,11 +22,6 @@ export default function Card(props: CardProps) {
     className = '',
   } = props;
   const mobile = useIsTabletSm();
-
-  useEffect(() => {
-    console.log('mobile', mobile);
-    console.log('env', process.env.NODE_ENV);
-  }, [mobile]);
 
   return (
     <div
