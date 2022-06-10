@@ -1,0 +1,29 @@
+.containerBase {
+  composes: cursor-pointer w-full flex flex-col from global;
+}
+
+.container {
+  composes: containerBase;
+  composes: mt-[33px] from global;
+}
+
+.errorContainer {
+  composes: containerBase;
+}
+
+.option {
+  composes: flex flex-row justify-center tabletSm|justify-between capitalize items-center px-[18px] py-5 tabletSm|py-[25px] tabletSm|pl-[42px] tabletSm|pr-5 first|border-t border-b border-primary-border from global;
+}
+
+.errorOption {
+  composes: option;
+  composes: text-red border-red from global;
+}
+
+.icon {
+  composes: absolute right-[43px] tabletSm|static tabletSm|right-auto text-blue-ada w-3 h-3 mr-1 from global;
+}
+
+.error {
+  composes: text-red mt-2 from global;
+}

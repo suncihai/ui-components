@@ -1,0 +1,8 @@
+.input {
+  composes: block !text-[75px] !leading-[80px] !tabletSm|text-[70px] !tabletSm|leading-[60px] !font-extralight margin-0 w-full bg-primary-background tabletSm|bg-tertiary-background text-primary-text border text-center border-0 py-5 h-[105px] rounded-md focus|outline-0 from global;
+
+  /* For Chrome */
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--white) inset !important;
+  }
+}

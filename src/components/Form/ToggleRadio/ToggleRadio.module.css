@@ -1,0 +1,62 @@
+.container {
+  composes: cursor-pointer relative from global;
+}
+
+.dot {
+  composes: overflow-hidden block relative w-[74px] h-[39px] from global;
+}
+
+.radioToggleBase {
+  composes: absolute items-center justify-between inset-0 rounded-full z-2 from global;
+  transition: all 125ms ease-in-out;
+
+  &:before {
+    position: absolute;
+    content: '';
+    height: 35px;
+    width: 35px;
+    top: 4.5%;
+    left: 4.5%;
+    border-radius: 99px;
+    z-index: 1;
+    background: var(--primary-background);
+    transition: all 125ms ease-in-out;
+  }
+}
+
+.radioToggleOn {
+  composes: radioToggleBase;
+  composes: bg-blue-ada from global;
+}
+
+.radioToggleOff {
+  composes: radioToggleBase;
+  composes: bg-secondary-background from global;
+}
+
+.isOn {
+  composes: bg-secondary-background from global;
+
+  &:before {
+    transform: translatex(95%);
+    background: var(--primary-background);
+  }
+}
+
+.labelContainer {
+  composes: flex gap-x-1 items-center justify-evenly h-full from global;
+}
+
+.label {
+  composes: text-[10px] uppercase font-bold tracking-[0.1em] from global;
+}
+
+.labelOn {
+  composes: label;
+  composes: text-light-text from global;
+}
+
+.labelOff {
+  composes: label;
+  composes: text-primary-text from global;
+}

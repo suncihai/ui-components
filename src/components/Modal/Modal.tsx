@@ -7,7 +7,7 @@ import {
   enableBodyScroll,
 } from 'body-scroll-lock';
 
-import { useIsTabletMd } from '../../hooks/useMediaQueries';
+import { useIsTabletMd } from '@hooks/useMediaQueries';
 import Card from '../Card';
 
 import s from './Modal.module.css';

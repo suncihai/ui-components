@@ -1,0 +1,29 @@
+.container {
+  composes: cursor-pointer relative w-full flex justify-between tabletSm-down|gap-[10px] from global;
+}
+
+.buttonBase {
+  composes: w-[250px] h-[50px] flex items-center from global;
+}
+
+.button {
+  composes: buttonBase;
+}
+
+.errorButton {
+  composes: buttonBase;
+  composes: text-red border-red from global;
+}
+
+.buttonChecked {
+  composes: buttonBase;
+  composes: bg-secondary-background from global;
+}
+
+.icon {
+  composes: text-blue-ada w-3 h-3 mr-1 from global;
+}
+
+.error {
+  composes: text-red mt-2 from global;
+}

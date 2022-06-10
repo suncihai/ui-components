@@ -1,0 +1,11 @@
+.input {
+  composes: text-center h-[97px] w-[68px] border rounded-[9px] text-[54px] font-light outline-none border-light-grey-4 active|border-blue-ada focus|border-blue-ada from global;
+
+  &.error {
+    border-color: var(--dark-red);
+  }
+
+  &.success {
+    border-color: var(--green-chart);
+  }
+}

@@ -1,0 +1,42 @@
+.container {
+  composes: hidden tabletSm|block w-[300px] tabletSm|w-[600px] mx-auto mt-[60px] from global;
+}
+
+.item {
+  composes: first|after|content-none relative list-none float-left text-[12px] text-center capitalize text-light-grey-2 from global;
+  composes: before|content-[ '\A'] before|h-[10px] before|w-[10px] before|leading-[30px] before|border-2 before|border-light-grey-2 before|block before|text-center before|mx-auto before|mb-[10px] before|rounded-[50%] before|bg-white from global;
+  composes: after|content-[ '' ] after|absolute after|w-full after|h-[2px] after|bg-light-grey-2 after|top-[4px] after|left-[-50%] after|z-[-1] from global;
+
+  width: calc(100% / var(--steps));
+}
+
+.active {
+  composes: font-bold text-[12px] text-charcoal-darker from global;
+  composes: before|border-blue-ada before|bg-blue-ada from global;
+
+  & + .item:after {
+    background-color: var(--blue-ada);
+  }
+}
+.mobileContainer {
+  --containerHeight: 60px;
+
+  composes: block tabletSm|hidden bg-primary-background flex relative flex-col justify-center items-center w-full border-b-light-grey-6 mt-0 tabletSm|border-0 from global;
+
+  @media (max-width: 744px) {
+    height: var(--containerHeight);
+  }
+}
+
+.mobileStep {
+  composes: uppercase text-[16px] tracking-[.40em] font-bold from global;
+}
+
+.line {
+  composes: h-[3px] bg-blue-ada z-[999] left-[0] absolute from global;
+
+  @media (max-width: 744px) {
+    top: calc(var(--containerHeight) - 2px);
+    width: calc((var(--currentStep) / var(--steps)) * 100%);
+  }
+}

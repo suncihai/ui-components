@@ -38,6 +38,11 @@ export default {
           globals,
           sourcemap: true,
         },
+        {
+          file: 'lib/index.min.js',
+          format: 'cjs',
+          plugins: [terser()],
+        },
       ]
     : [
         {
@@ -50,9 +55,9 @@ export default {
   cache: !isProduction,
   plugins: [
     peerDepsExternal({ includeDependencies: false }),
-    resolve(),
     postcss({
       extract: false,
+      modules: true,
       plugins: [postcssImport(), postcssNested(), autoprefixer()],
       extensions: ['.css'],
     }),
@@ -63,11 +68,11 @@ export default {
         'node_modules/react-responsive/src/index.js': ['useMediaQuery'],
       },
     }),
+    resolve(),
     tsConfigPaths(),
     typescript({
       tsconfig: './tsconfig.json',
     }),
     svg(),
-    terser(),
   ],
 };

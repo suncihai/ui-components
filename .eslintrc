@@ -1,6 +1,6 @@
 {
   "extends": ["plugin:@typescript-eslint/recommended", "prettier"],
-  "plugins": ["@typescript-eslint", "sort-keys-fix", "prettier"],
+  "plugins": ["@typescript-eslint", "sort-keys-fix", "prettier", "react-hooks"],
   "rules": {
     "camelcase": 0,
     "comma-dangle": 0,

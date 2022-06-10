@@ -1,0 +1,47 @@
+.threeBalls {
+  composes: mx-auto w-[70px] text-center from global;
+}
+
+.ball {
+  composes: relative w-[15px] h-[15px] rounded-full inline-block from global;
+
+  animation: bouncedelay 2.0s infinite cubic-bezier(.62, .28, .23, .99) both;
+}
+
+.ball1 {
+  composes: ball;
+  animation-delay: -.16s;
+}
+
+.ball2 {
+  composes: ball;
+  animation-delay: -.08s;
+}
+
+.ball3 {
+  composes: ball;
+}
+
+
+@keyframes bouncedelay {
+  0% {
+    bottom: 0;
+    background-color: var(--blue-6);
+  }
+  25% {
+    bottom: 40px;
+    background-color: var(--blue-2);
+  }
+  50% {
+    bottom: 0px;
+    background-color: var(--legacy-blue-1);
+  }
+  75% {
+    bottom: 40px;
+    background-color: var(--blue-ada);
+  }
+  100% {
+    bottom: 0px;
+    background-color: var(--blue-5);
+  }
+}

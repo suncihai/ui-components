@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/pro-light-svg-icons';
-import { useIsTabletSm } from '../../hooks/useMediaQueries';
+import { useIsTabletSm } from '@hooks/useMediaQueries';
 
 import s from './Card.module.css';
 

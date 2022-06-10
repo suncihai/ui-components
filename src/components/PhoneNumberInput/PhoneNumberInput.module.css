@@ -1,0 +1,30 @@
+.container {
+  composes: bg-white flex items-center rounded-[9px] from global;
+
+  --inputSize: 15px;
+
+  @media (min-width: 414px) {
+    --inputSize: 20px;
+  }
+
+  @media (min-width: 744px) {
+    --inputSize: 30px;
+  }
+}
+
+.input {
+  composes: h-[67px] tabletSm|h-[100px] text-[32px] tabletSm|text-[55px] text-center outline-none font-light from global;
+
+  width: calc(3 * var(--inputSize));
+}
+
+.largeInput {
+  composes: rounded-[9px] from global;
+  composes: input;
+
+  width: calc(4 * var(--inputSize));
+}
+
+.icon {
+  composes: mx-1.5 tabletSm|mx-3 text-light-grey-3 from global;
+}

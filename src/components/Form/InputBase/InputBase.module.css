@@ -1,0 +1,87 @@
+.textField {
+  composes: flex flex-col relative w-full pt-2 mb-[5px] from global;
+  --password-visibility-toggle-width: 30px;
+}
+
+.label {
+  composes: absolute left-[15px] top-[23px] text-tertiary-text from global;
+  transform: translate(0, 5 px) scale(1);
+  transition: 50ms ease-in;
+}
+
+.labelError {
+  composes: text-red from global;
+}
+
+.input:-webkit-autofill + .label,
+.input:focus + .label,
+.labelActive {
+  width: auto;
+  margin: 1px;
+  background: var(--primary-background);
+  border-bottom: none;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  left: 0;
+  padding-left: 15px;
+  padding-top: 2px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  transform: translate(0, -15px);
+  transition: 50ms ease-in;
+}
+
+.input {
+  composes: block margin-0 w-full bg-primary-background text-primary-text border border-primary-border py-1 pr-8 pt-[15px] pl-[15px] h-[53px] rounded-md from global;
+  font: inherit;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: var(--white);
+  }
+
+  /* For Chrome */
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--white) inset !important;
+  }
+
+  &:placeholder {
+    color: var(--grey-7);
+  }
+}
+
+.input[type='date']::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 10px;
+  top: 24px;
+  z-index: 1;
+}
+
+.validation {
+  composes: absolute right-0 top-0 flex items-center bottom-px pointer-events-none from global;
+}
+
+.validationMessage {
+  composes: px-1 from global;
+
+  .error & {
+    color: var(--legacy-light-red-text);
+  }
+}
+
+.validationIcon {
+  composes: m-2 w-[14px] h-[14px] from global;
+}
+
+.error .input {
+  border: 1px solid var(--red);
+}
+
+.error .label {
+  color: var(--red);
+}

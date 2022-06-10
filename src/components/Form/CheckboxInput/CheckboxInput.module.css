@@ -1,0 +1,45 @@
+.container {
+  composes: block relative pl-8 mb-5 cursor-pointer from global;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ .checkmark {
+      background-color: var(--blue-ada);
+      border-width: 0;
+
+      &:after {
+        display: block;
+      }
+    }
+  }
+}
+
+.checkmark {
+  composes: top-0 left-0 border rounded-md mt-1 absolute from global;
+  height: 18px;
+  width: 18px;
+  background-color: var(--light-grey-6);
+  border-color: var(--light-grey-3);
+
+  &:after {
+    content: '';
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 3px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.label {
+  composes: pb-2 from global;
+}

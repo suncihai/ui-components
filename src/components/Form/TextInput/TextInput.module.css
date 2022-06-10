@@ -1,0 +1,133 @@
+.textField {
+  composes: flex flex-col relative w-full pt-2 mb-4 from global;
+  --password-visibility-toggle-width: 30px;
+
+  &.border {
+    margin-bottom: 5px;
+  }
+}
+
+.label {
+  composes: absolute from global;
+  transform: translate(0, 5 px) scale(1);
+  transition: 50ms ease-in;
+  color: var(--light-grey-3);
+
+  .border & {
+    left: 15px;
+    top: 23px;
+    color: var(--tertiary-text);
+  }
+}
+
+.labelError {
+  composes: text-red from global;
+}
+
+.input:-webkit-autofill + .label,
+.input:focus + .label,
+.labelActive {
+  width: 100%;
+  background-color: var(--white);
+  font-size: 13px;
+  transform: translate(0, -15px);
+  transition: 50ms ease-in;
+
+  .border & {
+    width: auto;
+    margin: 1px;
+    background: var(--primary-background);
+    border-bottom: none;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    left: 0;
+    padding-left: 15px;
+    padding-top: 2px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+  }
+}
+
+.input {
+  composes: block margin-0 w-full border-t-0 border-r-0 border-b border-l-0 py-1 pr-8 rounded-none from global;
+  border-bottom-color: var(--light-grey-3);
+  font: inherit;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: var(--white);
+  }
+
+  /* For Chrome */
+  &:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px var(--white) inset !important;
+  }
+
+  &:placeholder {
+    color: var(--grey-7);
+  }
+
+  &.password {
+    padding-right: var(--password-visibility-toggle-width);
+  }
+
+  .border & {
+    background: var(--primary-background);
+    color: var(--primary-text);
+    border: 1px solid var(--primary-border);
+    border-radius: 6px;
+    height: 53px;
+    padding-left: 15px;
+    padding-top: 15px;
+  }
+}
+
+.toggleVisibility {
+  composes: absolute right-0 cursor-pointer flex items-center top-px bottom-px from global;
+  width: var(--password-visibility-toggle-width);
+}
+
+.eyeIcon {
+  composes: text-grey-1 m-1.5 w-[18px] h-[18px] from global;
+}
+
+.validation {
+  composes: absolute right-0 top-0 flex items-center bottom-px pointer-events-none from global;
+}
+
+.validationMessage {
+  composes: px-1 from global;
+
+  .error & {
+    color: var(--legacy-light-red-text);
+  }
+}
+
+.validationIcon {
+  composes: m-2 w-[14px] h-[14px] from global;
+}
+
+.error.default .input {
+  border-bottom-color: var(--red);
+}
+
+.error.border .input {
+  border: 1px solid var(--red);
+}
+
+.error .label {
+  color: var(--red);
+}
+
+.note {
+  composes: text-light-grey-3 text-[13px] from global;
+}
+
+.showPassword {
+  composes: absolute text-light-grey-3 cursor-pointer right-2.5 top-6 from global;
+}
